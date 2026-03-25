@@ -188,14 +188,6 @@ html{
     background: linear-gradient(135deg,#00d9ff,#0084ff);
 }
 
-.social-icon{
-    font-size: 30px;
-    color: #fbfbfb;
-    position: relative;
-    top: 132px;
-    right: 290px;
-}
-
 /* ===============================
    ABOUT SECTION
 ================================*/
@@ -583,6 +575,7 @@ html{
 }
 
 .skills-title{
+    margin-top: 30px;
     margin-bottom: 30px;
     text-align:center;
     font-size:40px;
@@ -872,6 +865,7 @@ html{
 }
 
 .projects-title{
+    margin-top: 30px;
     margin-bottom: 30px;
     text-align:center;
     font-size:40px;
@@ -1125,5 +1119,68 @@ html{
     box-shadow: 0 0 12px rgba(78, 128, 65, 0.3);
     transform: translateY(-1px);
 }
+
+.contact-section{
+
+}
+
+.contact-title{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align:center;
+    font-size:40px;
+    font-weight:700;
+    color:var(--accent-color);
+}
+
+.contact-section{
+    padding:80px 10%;
+}
+
+.contact-container{
+    display:flex;
+    gap:40px;
+    margin-top:40px;
+}
+
+.contact-info{
+    flex:1;
+}
+
+.contact-info p{
+    margin:10px 0;
+}
+
+.contact-socials a{
+    margin-right:15px;
+    font-size:22px;
+    color:white;
+}
+
+.contact-form{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:12px;
+    border:none;
+    outline:none;
+    border-radius:6px;
+}
+
+.contact-form button{
+    padding:12px;
+    border:none;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+
 
 
