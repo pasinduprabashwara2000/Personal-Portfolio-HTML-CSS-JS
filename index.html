@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -12,7 +13,10 @@
     <div class="navbar-logo">
         <a href="#">Pasindu Prabashwara</a>
     </div>
-    <div class="navbar-links">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="navbar-links" id="nav-links">
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#education">Education</a></li>
@@ -321,6 +325,20 @@
 
 <script src="js/projects.js"></script>
 <script src="js/skills.js"></script>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            navLinks.classList.remove('open');
+        });
+    });
+</script>
 
 </body>
 </html>

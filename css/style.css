@@ -1184,3 +1184,208 @@ html{
 
 
 
+
+/* ===============================
+   HAMBURGER MENU
+================================*/
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 200;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--text-main);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===============================
+   RESPONSIVE — 1024px (Tablet)
+================================*/
+@media (max-width: 1024px) {
+    /* Navbar */
+    .navbar { padding: 16px 5%; }
+
+    /* Hero */
+    .hero-section { padding: 60px 5%; }
+    .hero-section-left { width: 55%; }
+    .title { font-size: 46px; }
+    .hero-section-right { width: 320px; height: 320px; }
+
+    /* About */
+    .about-section { padding: 60px 5%; }
+    .about-section-left {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .about-section-right {
+        position: static;
+        width: 100%;
+        height: auto;
+        top: auto;
+        left: auto;
+    }
+    .about-section-bottom { margin-top: 40px; }
+
+    /* Education */
+    .education-section { padding: 50px 5%; }
+    .education-card { width: 100%; height: auto; }
+    .education-logo { position: static; float: right; }
+    .education-content { position: static; }
+
+    /* Skills */
+    .sk-body { grid-template-columns: 220px 1fr; gap: 28px; }
+
+    /* Projects */
+    .projects-section-raw { left: 0; flex-wrap: wrap; justify-content: center; }
+}
+
+/* ===============================
+   RESPONSIVE — 768px (Mobile Landscape)
+================================*/
+@media (max-width: 768px) {
+    /* Navbar */
+    .hamburger { display: flex; }
+
+    .navbar-links {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.97);
+        backdrop-filter: blur(16px);
+        z-index: 150;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbar-links.open { display: flex; }
+
+    .navbar-links ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+    .navbar-links a { font-size: 1.2rem; }
+    .navbar-links li:last-child a { padding: 10px 30px; }
+
+    /* Hero */
+    .hero-section {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        padding: 60px 6% 50px;
+        gap: 40px;
+        min-height: auto;
+    }
+    .hero-section-left { width: 100%; }
+    .title { font-size: 36px; }
+    .title-start { font-size: 18px; }
+    .title-end { font-size: 18px; }
+    .hero-section-left p { margin: 0 auto 20px; }
+    .hero-section-right {
+        width: 240px;
+        height: 240px;
+        flex-shrink: 0;
+    }
+
+    /* About */
+    .about-section { padding: 50px 6%; }
+    .about-title { font-size: 30px; }
+
+    .about-section-left,
+    .about-section-right {
+        position: static;
+        width: 100%;
+        height: auto;
+        top: auto;
+        left: auto;
+        border-radius: 15px;
+        padding: 30px;
+    }
+    .about-section-bottom { margin-top: 40px; }
+    .about-section-stack-title { font-size: 28px; }
+
+    /* Education */
+    .education-row { flex-direction: column; }
+    .education-card { width: 100%; height: auto; }
+    .education-logo {
+        position: static;
+        float: none;
+        display: block;
+        margin-bottom: 12px;
+    }
+    .education-content { position: static; bottom: auto; }
+
+    /* Work Experience */
+    .work-experience-section { flex-direction: column; align-items: center; }
+
+    /* Skills */
+    .sk-body {
+        grid-template-columns: 1fr;
+    }
+    .sk-cat-list {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .sk-cat-item { padding: 10px 14px; }
+
+    /* Projects */
+    .projects-section-raw {
+        flex-direction: column;
+        align-items: center;
+        left: 0;
+        gap: 20px;
+    }
+    .nhost-card { max-width: 100%; }
+
+    /* Contact */
+    .contact-container { flex-direction: column; }
+    .contact-section { padding: 50px 6%; }
+}
+
+/* ===============================
+   RESPONSIVE — 480px (Mobile Portrait)
+================================*/
+@media (max-width: 480px) {
+    .navbar { padding: 14px 4%; }
+    .navbar-logo a { font-size: 1.2rem; }
+
+    .hero-section { padding: 50px 4% 40px; }
+    .title { font-size: 28px; }
+    .hero-section-right { width: 180px; height: 180px; }
+    .download-btn { font-size: 14px; padding: 10px 22px; }
+
+    .about-section { padding: 40px 4%; }
+    .about-title, .section-title, .skills-title,
+    .projects-title, .contact-title, .work-experience-section-title { font-size: 26px; }
+
+    .about-section-left,
+    .about-section-right { padding: 22px; }
+    .about-section-stack-logos { gap: 18px; }
+    .about-section-stack-logos img { width: 64px !important; height: 64px !important; }
+
+    .education-section { padding: 40px 4%; }
+
+    .sk-body { padding: 0 16px; }
+    .sk-cards { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+
+    .contact-section { padding: 40px 4%; }
+    .contact-form input,
+    .contact-form textarea { font-size: 15px; }
+}
